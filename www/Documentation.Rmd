@@ -1,0 +1,61 @@
+---
+title: "Regression Architect Documentation"
+author: "Anurag Ladage"
+date: "October 20, 2014"
+output: html_document
+---
+
+
+###**Summary:**
+This application is a simple application to build regression models. The application can perform either *Multiple linear Regression*, *Logistics Regression* or *Poisson Regression*. The final regression model suggested by the application is either by Alkaike Information Criterion (AIC) or Bayesian Information Criterion(BIC), which is selected by the user. Additionally, the application also gives an option to plot the residual plots and the response variable plots. All the document and R files related to this application can be found in the github repository mentioned below.
+
+
+###**General Procedure:**
+
+  1. Upload a clean dataset without any missing values in comma separated values format (.csv).
+
+  2. Select the regression technique to be implemented.
+  
+  3. Select the model selection criteria.
+
+  4. Enter the column name of the response variable.
+
+  5. Build the regression model by pressing the action button *"Create Regression Model"*.
+
+  6. Further, the predicted response variable value can be plotted over the actual response variable value by pressing *"Plot Response Variables"*.
+
+  7. Additionally, the residual plot can also be plotted using the *"Create Residual Plots"* action button.
+
+
+###**Do's and Dont's:**
+
+  1. Upload only datasets with no missing values and in .csv format.
+  
+  2. Please upload medium sized datasets if possible for testing the application as AIC and BIC solve different models iteratively and the solving time will increase with the increase in independent variables.
+  
+  3. The application hasn't been configured for all possible error handling situations thus care should be taken to apply the regression techniques to proper type of response variable as suggested below.
+  
+  4. If your response variable is not an strict integer/count variable and neither a binary variable multiple linear regression is your best option.
+  
+  5. If the response variable is a binary variable then logistics regression should be used.
+  
+  6. Poisson regression is very effective for a response variable which is integer/count by nature and is non-negative.
+  
+  7. In general BIC is a better model selection criterion than AIC.
+  
+  8. While creating a .csv file from R by default the row names get created as an extra column. Make sure before uploading a dataset that the dataset is without that extra row names column
+  
+  
+###**Sample Datasets:**
+The above application has been tested on the following datasets. Feel free to download and use them to test this app.
+
+ * [mtcars](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION/blob/master/mtcars.csv)
+ * [pima.tr](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION/blob/master/pima.csv)
+ * [iris](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION/blob/master/iris.csv)
+ 
+###Github Link: 
+* [Regression Architect Files](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION)
+ 
+ 
+
+
