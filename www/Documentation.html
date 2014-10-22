@@ -61,7 +61,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="summary" class="section level3">
 <h3><strong>Summary:</strong></h3>
-<p>This application is a simple application to build regression models. The application can perform either <em>Multiple linear Regression</em>, <em>Logistics Regression</em> or <em>Poisson Regression</em>. The final regression model suggested by the application is either by Alkaike Information Criterion (AIC) or Bayesian Information Criterion(BIC), which is selected by the user. Additionally, the application also gives an option to plot the residual plots and the response variable plots. All the document and R files related to this application can be found in the github repository mentioned below.</p>
+<p>This application is a simple app to build regression models. The application can perform either <em>Multiple linear Regression</em>, <em>Logistics Regression</em> or <em>Poisson Regression</em> on any clean dataset (in .csv format) uploaded by the user. It uses Alkaike Information Criterion (AIC) or Bayesian Information Criterion(BIC) to build the best possible regression model for you. The application also gives an option to plot the residual plots and the response variable plot for users wanting to perform an indept analysis.All the document and R files related to this application can be found in the github repository mentioned below.</p>
 </div>
 <div id="general-procedure" class="section level3">
 <h3><strong>General Procedure:</strong></h3>
@@ -71,21 +71,23 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><p>Select the model selection criteria.</p></li>
 <li><p>Enter the column name of the response variable.</p></li>
 <li><p>Build the regression model by pressing the action button <em>“Create Regression Model”</em>.</p></li>
-<li><p>Further, the predicted response variable value can be plotted over the actual response variable value by pressing <em>“Plot Response Variables”</em>.</p></li>
-<li><p>Additionally, the residual plot can also be plotted using the <em>“Create Residual Plots”</em> action button.</p></li>
+<li><p>Further, the predicted response variable value can be plotted over the actual response variable value by pressing <em>“Plot Response Variables”</em> button.</p></li>
+<li><p>Additionally, the residual plot can also be plotted using the <em>“Create Residual Plots”</em> action button for indepth analysis the residuals.</p></li>
 </ol>
 </div>
 <div id="dos-and-donts" class="section level3">
 <h3><strong>Do’s and Dont’s:</strong></h3>
 <ol style="list-style-type: decimal">
 <li><p>Upload only datasets with no missing values and in .csv format.</p></li>
-<li><p>Please upload medium sized datasets if possible for testing the application as AIC and BIC solve different models iteratively and the solving time will increase with the increase in independent variables.</p></li>
-<li><p>The application hasn’t been configured for all possible error handling situations thus care should be taken to apply the regression techniques to proper type of response variable as suggested below.</p></li>
-<li><p>If your response variable is not an strict integer/count variable and neither a binary variable multiple linear regression is your best option.</p></li>
-<li><p>If the response variable is a binary variable then logistics regression should be used.</p></li>
-<li><p>Poisson regression is very effective for a response variable which is integer/count by nature and is non-negative.</p></li>
+<li><p>Please upload medium sized datasets if possible for testing the application as AIC and BIC solve different models iteratively and the solving time will increase with the increase in the numner of independent variables.</p></li>
+<li><p>The application hasn’t been configured for all possible error handling situations thus, care should be taken to apply the regression techniques to proper type of response variable as suggested below:</p>
+<ul>
+<li><p>If your response variable is a real number having continuous values multiple linear regression is your best option.</p></li>
+<li><p>If the response variable is a binary variable, then logistics regression should be used.</p></li>
+<li><p>Poisson regression should be used for a response variable which is integer/count by nature and takes on non-negative values.</p></li>
+</ul></li>
 <li><p>In general BIC is a better model selection criterion than AIC.</p></li>
-<li><p>While creating a .csv file from R by default the row names get created as an extra column. Make sure before uploading a dataset that the dataset is without that extra row names column</p></li>
+<li><p>While creating a .csv file from a R dataset, please make sure to set the row.names parameter to FALSE in write.csv() function.</p></li>
 </ol>
 </div>
 <div id="sample-datasets" class="section level3">
@@ -97,10 +99,18 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><a href="https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION/blob/master/iris.csv">iris</a></li>
 </ul>
 </div>
+<div id="sample-model-examples" class="section level3">
+<h3><strong>Sample Model Examples:</strong></h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Multiple Linear Regression:</strong> From the mtcars dataset select <em>‘mpg’</em> as the response variable perform regression analysis to see the outputs.</p></li>
+<li><p><strong>Linear Logistics Regression:</strong> From the pima.tr dataset select <em>‘type’</em> as the response variable and perform the analysis.</p></li>
+<li><p><strong>Poisson Regression:</strong> From the pima.tr dataset select <em>‘age’</em> as the response variable and peform this regression analysis</p></li>
+</ol>
+</div>
 <div id="github-link" class="section level3">
 <h3>Github Link:</h3>
 <ul>
-<li><a href="https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION">Regression Architect Files</a></li>
+<li><a href="https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION">Regression Architect Github Repository</a></li>
 </ul>
 </div>
 

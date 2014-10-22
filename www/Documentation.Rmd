@@ -7,7 +7,7 @@ output: html_document
 
 
 ###**Summary:**
-This application is a simple application to build regression models. The application can perform either *Multiple linear Regression*, *Logistics Regression* or *Poisson Regression*. The final regression model suggested by the application is either by Alkaike Information Criterion (AIC) or Bayesian Information Criterion(BIC), which is selected by the user. Additionally, the application also gives an option to plot the residual plots and the response variable plots. All the document and R files related to this application can be found in the github repository mentioned below.
+This application is a simple app to build regression models. The application can perform either *Multiple linear Regression*, *Logistics Regression* or *Poisson Regression* on any clean dataset (in .csv format) uploaded by the user. It uses Alkaike Information Criterion (AIC) or Bayesian Information Criterion(BIC) to build the best possible regression model for you. The application also gives an option to plot the residual plots and the response variable plot for users wanting to perform an indept analysis.All the document and R files related to this application can be found in the github repository mentioned below.
 
 
 ###**General Procedure:**
@@ -22,28 +22,28 @@ This application is a simple application to build regression models. The applica
 
   5. Build the regression model by pressing the action button *"Create Regression Model"*.
 
-  6. Further, the predicted response variable value can be plotted over the actual response variable value by pressing *"Plot Response Variables"*.
+  6. Further, the predicted response variable value can be plotted over the actual response variable value by pressing *"Plot Response Variables"* button.
 
-  7. Additionally, the residual plot can also be plotted using the *"Create Residual Plots"* action button.
+  7. Additionally, the residual plot can also be plotted using the *"Create Residual Plots"* action button for indepth analysis the residuals.
 
 
 ###**Do's and Dont's:**
 
   1. Upload only datasets with no missing values and in .csv format.
   
-  2. Please upload medium sized datasets if possible for testing the application as AIC and BIC solve different models iteratively and the solving time will increase with the increase in independent variables.
+  2. Please upload medium sized datasets if possible for testing the application as AIC and BIC solve different models iteratively and the solving time will increase with the increase in the numner of independent variables.
   
-  3. The application hasn't been configured for all possible error handling situations thus care should be taken to apply the regression techniques to proper type of response variable as suggested below.
+  3. The application hasn't been configured for all possible error handling situations thus, care should be taken to apply the regression techniques to proper type of response variable as suggested below:
   
-  4. If your response variable is not an strict integer/count variable and neither a binary variable multiple linear regression is your best option.
+    + If your response variable is a real number having continuous values multiple linear regression is your best option.
   
-  5. If the response variable is a binary variable then logistics regression should be used.
+    + If the response variable is a binary variable, then logistics regression should be used.
   
-  6. Poisson regression is very effective for a response variable which is integer/count by nature and is non-negative.
+    + Poisson regression should be used for a response variable which is integer/count by nature and takes on non-negative values.
   
-  7. In general BIC is a better model selection criterion than AIC.
+  4. In general BIC is a better model selection criterion than AIC.
   
-  8. While creating a .csv file from R by default the row names get created as an extra column. Make sure before uploading a dataset that the dataset is without that extra row names column
+  5. While creating a .csv file from a R dataset, please make sure to set the row.names parameter to FALSE in write.csv() function.
   
   
 ###**Sample Datasets:**
@@ -52,10 +52,15 @@ The above application has been tested on the following datasets. Feel free to do
  * [mtcars](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION/blob/master/mtcars.csv)
  * [pima.tr](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION/blob/master/pima.csv)
  * [iris](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION/blob/master/iris.csv)
- 
+
+###**Sample Model Examples:**
+1. **Multiple Linear Regression:** From the mtcars dataset select *'mpg'* as the response variable perform regression analysis to see the outputs.
+
+2. **Linear Logistics Regression:** From the pima.tr dataset select *'type'* as the response variable and perform the analysis.
+
+3. **Poisson Regression:** From the pima.tr dataset select *'age'* as the response variable and peform this regression analysis
+
+
+
 ###Github Link: 
-* [Regression Architect Files](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION)
- 
- 
-
-
+* [Regression Architect Github Repository](https://github.com/GriMMJaW/REGRESSION-ARCHITECT-APPLICATION)

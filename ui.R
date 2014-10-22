@@ -8,7 +8,7 @@ shinyUI(fluidPage(
     headerPanel("REGRESSION ARCHITECT"),
     sidebarPanel(
       fileInput(inputId="input_data",label="Upload a .csv file",accept=c('text/csv','text/comma-separated-values,text/plain','.csv')),
-      radioButtons("regression_choice","Select Regression Technique:",c("Linear Regression"="glm","Logistics Regression"="logit","Poisson Regression"="poisson")),
+      radioButtons("regression_choice","Select Regression Technique:",c("Multiple Linear Regression"="glm","Linear Logistics Regression"="logit","Poisson Regression"="poisson")),
       selectInput("selection_criteria","Model Selection Criteria:",c("AIC"="AIC","BIC"="BIC")),
       textInput("y","Enter Response Variable (Column Name):"),
       actionButton("regression_modeller","Create Regression Model"),
